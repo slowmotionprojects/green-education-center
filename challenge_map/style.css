@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "Noto Sans Regular";
+    src: url("NotoSans-Regular.ttf");
+}
+@font-face {
+    font-family: "Noto Sans Bold";
+    src: url("NotoSans-Bold.ttf");
+}
+    
+body {
+    background-image: url("background.jpg");
+    font-family: "Noto Sans Regular";
+}
+
+header {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 500px;
+    width: 1300px;
+    height: 108px;
+    font-size: x-large;
+    font-family: "Noto Sans Bold";
+    text-align: center;
+    background: rgba(95, 95, 95, .7);;
+    color: #eee;
+    padding: 0px;
+    font-family: Helvetica, sans-serif;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#wheelDiv {
+    position: fixed;
+    bottom: 120px;
+    left: 50px;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+#wheelDiv>svg {
+    height: 100%;
+    width: 100%;
+}
+
+#wheelDivBackground {
+    position: fixed;
+    bottom: 140px;
+    left: 70px;
+    width: 360px;
+    height: 360px;
+    -webkit-border-radius: 180px;
+    -moz-border-radius: 180px;
+    border-radius: 180px;
+    background: #E7E7E7;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#hintBox {
+    position: fixed;
+    bottom: 550px;
+    left: 100px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: rgba(231, 231, 231, .95);
+    color: red;
+    text-align: center;
+    display: table; 
+    overflow: hidden;
+    
+}
+
+    #hintBox p {
+        display: table-cell;
+        vertical-align: middle;
+        font-family: "Noto Sans Bold";
+    }
+
+#challengeDescription {
+    position: fixed;
+    top: 130px;
+    left: 500px;
+    width: 1300px;
+    height: 940px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+    background: rgba(231, 231, 231, .95);
+}
+
+#challengeTitle_CN {
+    width: 50%;
+    margin: 10px auto; 
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    float: left;
+}
+
+#challengeTitle_EN {
+    width: 50%;
+    margin: 10px auto; 
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    float: right;
+}
+
+#challengePictureFrame {
+    width: 780px;
+    margin: 20px auto 30px auto; 
+    text-align: center;
+}
+
+    #challengePictureFrame img {
+        border: 3px solid #bbb;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+#challengePictureCaption_CN {
+    width: 49%;
+    float: left;
+    margin: auto 0px;
+    font-family: "Noto Sans Bold";
+    font-weight: bold;
+    font-size: 1.0em;
+    height: 50px;
+}
+
+#challengePictureCaption_EN {
+    width: 49%;
+    float: right;
+    margin: auto 0px;
+    font-family: "Noto Sans Bold";
+    font-weight: bold;
+    font-size: 0.9em;
+    height: 50px;
+}
+
+#challengeText_CN {
+    width: 49%;
+    float: left;
+}
+
+#challengeText_EN {
+    width: 49%;
+    float: right;
+}
+
+    #challengeDescription p {
+        line-height: 1.2em;
+        margin: 0.8em 20px;
+        text-align: justify;
+    }
+    
+#challengeText_CN p {
+	font-size: 1.2em;
+    text-indent: 2em;
+}
+
+#challengeText_EN p {
+	font-size: 1em;
+    text-indent: 1em;
+}

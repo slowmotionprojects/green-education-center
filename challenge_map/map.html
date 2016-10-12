@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GEC China challenge map">
+    <link rel="stylesheet" href="style.css" />
+    <title>China challenge map</title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="raphael.min.js"></script>
+    <script type="text/javascript" src="raphael.icons.min.js"></script>
+    <script type="text/javascript" src="wheelnav.js"></script>
+    <script type="text/javascript" src="require.js"></script>
+    <script type="text/javascript" src="challenge_data.js"></script>
+    <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var wheel = new wheelnav("wheelDiv");
+            wheel.wheelRadius = 200;
+            wheel.maxPercent = 1.0;
+            wheel.navAngle = -90;
+            wheel.colors = colorpalette.slowmo;
+            wheel.slicePathFunction = slicePath().WheelSlice;
+            wheel.createWheel(["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]);
+            wheel.sliceHoverAttr = { stroke: '#FFF', 'stroke-width': 5 };
+            wheel.lineHoverAttr = { stroke: '#FFF', 'stroke-width': 4 };
+            wheel.titleHoverAttr = { fill: '#FFF', stroke: 'none' };
+            wheel.navItems[0].navigateFunction = function(){refresh_content(data[0]);};
+            wheel.navItems[1].navigateFunction = function(){refresh_content(data[1]);};
+            wheel.navItems[2].navigateFunction = function(){refresh_content(data[2]);};
+            wheel.navItems[3].navigateFunction = function(){refresh_content(data[3]);};
+            wheel.navItems[4].navigateFunction = function(){refresh_content(data[4]);};
+            wheel.navItems[5].navigateFunction = function(){refresh_content(data[5]);};
+            wheel.navItems[6].navigateFunction = function(){refresh_content(data[6]);};
+            wheel.navItems[7].navigateFunction = function(){refresh_content(data[7]);};
+            wheel.navItems[8].navigateFunction = function(){refresh_content(data[8]);};
+            wheel.navItems[9].navigateFunction = function(){refresh_content(data[9]);};
+            wheel.navItems[10].navigateFunction = function(){refresh_content(data[10]);};
+            wheel.navItems[11].navigateFunction = function(){refresh_content(data[11]);};
+            wheel.navItems[12].navigateFunction = function(){refresh_content(data[12]);};
+            wheel.navItems[13].navigateFunction = function(){refresh_content(data[13]);};
+            wheel.navItems[14].navigateFunction = function(){refresh_content(data[14]);};
+            wheel.navItems[15].navigateFunction = function(){refresh_content(data[15]);};
+            wheel.navItems[16].navigateFunction = function(){refresh_content(data[16]);};
+            wheel.navItems[17].navigateFunction = function(){refresh_content(data[17]);};
+            wheel.navItems[18].navigateFunction = function(){refresh_content(data[18]);};
+            wheel.navItems[19].navigateFunction = function(){refresh_content(data[19]);};
+            wheel.animatetime=500;
+            wheel.animateeffect="linear";
+            wheel.refreshWheel();
+            wheel.navigateWheel(0);
+        };
+        function refresh_content(content) {
+        	// hide hint box and show description, clear fade-out timer
+        	$("#hintBox").hide();
+        	$("#challengeDescription").show();
+        	clearTimeout(timer);
+        	
+        	// update div content
+        	document.getElementById("challengeDescription").style.visibility = "visible";
+        	document.getElementById("challengeTitle_CN").innerHTML=content["title_CN"];
+        	document.getElementById("challengeTitle_EN").innerHTML=content["title_EN"]; 
+        	document.getElementById("challengePicture").src = "pictures/" + content["picture"];
+        	document.getElementById("challengePicture").alt = content["caption_EN"];
+        	document.getElementById("challengePictureCaption_CN").innerHTML=content["caption_CN"];
+        	document.getElementById("challengePictureCaption_EN").innerHTML=content["caption_EN"]; 
+            document.getElementById("challengeText_CN").innerHTML=content["description_CN"]; 
+            document.getElementById("challengeText_EN").innerHTML=content["description_EN"]; 
+            // create new timer
+            timer = setTimeout("hideDescription()", 120000);
+        }
+    </script>
+    <script type="text/javascript">
+        function hideDescription() {
+            //document.getElementById("challengeDescription").style.visibility = "hidden";
+            $("#challengeDescription").fadeOut(500);
+            $("#hintBox").fadeIn(500);
+        }
+        // initialisation
+	    timer = setTimeout("hideDescription()", 10);
+    </script>
+
+
+</head>
+<body>
+    <header>
+        <p>
+            全球性思考：中国的一些环境挑战，同时威胁着人类和动物<br>
+            Thinking globally: some of China’s environmental challenges, threatening both humans and animals
+        </p>
+    </header>
+
+    <div id="wheelDiv"></div>
+    <div id="wheelDivBackground"></div>
+    <div id="hintBox">
+        <p>
+        <span style="font-size: xx-large;">
+        	请用鼠标点击<br>
+        	转盘上的任意数字<br>
+        </span>
+        <span style="font-size: x-large;">
+	        Click on any number<br>
+	        in the wheel
+	    </span>
+	    </p>
+    </div>
+    <div id="challengeDescription">
+	    <div id="challengeTitle_CN"></div>
+	    <div id="challengeTitle_EN"></div>
+    	<div id="challengePictureFrame">
+            <img id="challengePicture">
+            <div id="challengePictureCaption_CN"></div>
+            <div id="challengePictureCaption_EN"></div>
+    	</div>
+    	<div id="challengeText_CN"></div>
+    	<div id="challengeText_EN"></div>
+    	
+    </div>
+
+    <!-- Insert generated HTML5 code from here -> http://pmg.softwaretailoring.net -->
+
+    <!--
+    <footer>
+        <p>&copy; 2015 <a href="http://softwaretailoring.net" target="_blank">softwaretailoring.net</a></p>
+    </footer>
+     -->
+</body>
+</html>
